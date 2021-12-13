@@ -35,8 +35,6 @@ match sr {
 }
 ```
 
-
-
 `?` question mark: return Err for the function whenever an Err occurs.
 
 ```rust
@@ -54,4 +52,22 @@ let sum: Option<u32> = srst();
 ```
 
  
+
+
+
+How to alloc memory?
+
+```rust
+use std::alloc::{alloc, dealloc, Layout};
+
+unsafe {
+    let layout = Layout::new::<u16>();
+    let ptr = alloc(layout);
+
+    *(ptr as *mut u16) = 42;
+    assert_eq!(*(ptr as *mut u16), 42);
+
+    dealloc(ptr, layout);
+}
+```
 

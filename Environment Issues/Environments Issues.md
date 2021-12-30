@@ -21,3 +21,37 @@ Build libfmt as the shared lib (libfmt.so) rather than (libfmt.a) solves the pro
 
 Using command `cmake -DBUILD_SHARED_LIBS=ON ...`
 
+
+
+### Python Version (Anaconda)
+
+create a python2.7 environment
+
+```shell
+conda create -n python27 python=2.7
+```
+
+install a specific package
+
+```shell
+conda install -n python27 scipy
+```
+
+list all environments
+
+```shell
+conda env list
+```
+
+activate an environment
+
+```shell
+conda activate python27
+```
+
+deactivate an environment
+
+```shell
+conda deactivate
+```
+

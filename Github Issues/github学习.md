@@ -10,6 +10,12 @@ git clone -b <branchName> https://xxx.git
 git clone --recurse-submodules https://xxx.git
 ```
 
+更新submodule
+
+```shell
+git submodule update --init --recursive
+```
+
 
 
 ### 查看所有的分支

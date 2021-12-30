@@ -4,6 +4,12 @@
 git clone -b <branchName> https://xxx.git
 ```
 
+拉去所有submodule
+
+```shell
+git clone --recurse-submodules https://xxx.git
+```
+
 
 
 ### 查看所有的分支

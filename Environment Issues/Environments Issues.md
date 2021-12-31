@@ -55,3 +55,11 @@ deactivate an environment
 conda deactivate
 ```
 
+
+
+### 查看文件行数
+
+```shell
+wc -l <filename>
+```
+

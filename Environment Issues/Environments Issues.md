@@ -63,3 +63,13 @@ conda deactivate
 wc -l <filename>
 ```
 
+
+
+### YCSB generation
+
+```shell
+cd ~/Desktop/Heterogeneous_Memory/ERT/index-microbench
+conda activate python27
+YCSB/bin/ycsb load basic -P workload_spec/workloada -s > workloads/ycsb_txn_randint_workloada_50M
+```
+

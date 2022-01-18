@@ -244,3 +244,36 @@ vi .git/config
 
 
 
+## Git 删除contributor
+
+https://stackoverflow.com/questions/44563131/removing-contributor-from-github-com/44563345
+
+ViFi's answer works:
+
+Assuming, it is being done with all the right intentions and, you are the owner of repository - you can use `rename` feature on repository. Essentially, create replica of repository and swap repository names like you swap variables with steps below.
+
+1. Create a new `replica` repository
+2. Copy the cherry picks from `original` repository which have only the commits with intended authors.
+3. Rename the `original` repository to `to_be_deleted` and `replica` to `original`.
+
+Commits from original repository can be picked with following steps.
+
+- `git remote add repo2 https://github.com/mygit/original.git`
+- `git pull repo2`
+- `git cherry-pick <commit>`
+- `git push `
+
+Contributors are essentially the authors of any commit in the repository. I once accidentally put a wrong email in Author list of a commit in my repository and github started showing a new contributor in the repository. I tried [reverting the commit](https://ncona.com/2011/07/how-to-delete-a-commit-in-git-local-and-remote/) but it didn't help. Finally I had to create / rename /delete original repository.
+
+
+
+
+
+## Git 删除文件
+
+```shell
+git rm <filename>
+git commit -m "rm file"
+git push
+```
+

@@ -205,7 +205,7 @@ https://www.jianshu.com/p/f7ed3dd0d2d8
 git init
 git add xxx
 git commit -m ‘first commit’
-git remote add origin HTTPS_URL
+git remote add origin HTTPS_URL # to undo: git remote remove origin
 git pull origin main --allow-unrelated-histories
 git push origin main
 ```

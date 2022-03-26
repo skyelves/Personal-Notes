@@ -277,3 +277,21 @@ git commit -m "rm file"
 git push
 ```
 
+
+
+## Git 查看当前账户
+
+```shell
+git config user.name
+git config user.email
+```
+
+
+
+## Git 切换账号
+
+```shell
+git config --global user.name "John Doe" 
+git config --global user.email "john@doe.org"
+```
+

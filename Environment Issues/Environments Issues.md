@@ -25,16 +25,23 @@ Using command `cmake -DBUILD_SHARED_LIBS=ON ...`
 
 ### Python Version (Anaconda)
 
-create a python2.7 environment
+install anaconda
 
 ```shell
-conda create -n python27 python=2.7
+wget https://repo.anaconda.com/archive/Anaconda3-2020.07-Linux-x86_64.sh
+bash Anaconda3-2020.07-Linux-x86_64.sh
 ```
 
-install a specific package
+create a python3.7 environment
 
 ```shell
-conda install -n python27 scipy
+conda create -n python37 python=3.7
+```
+
+inwstall a specific package
+
+```shell
+conda install -n python37 scipy
 ```
 
 list all environments
@@ -46,7 +53,7 @@ conda env list
 activate an environment
 
 ```shell
-conda activate python27
+conda activate python37
 ```
 
 deactivate an environment
@@ -71,5 +78,47 @@ wc -l <filename>
 cd ~/Desktop/Heterogeneous_Memory/ERT/index-microbench
 conda activate python27
 YCSB/bin/ycsb load basic -P workload_spec/workloada -s > workloads/ycsb_txn_randint_workloada_50M
+```
+
+
+
+### Docker 使用
+
+启动docker `docker start <ID/docker_name>`
+
+查看已启动docker `docker ps -n 5`
+
+停止docker `docker stop` / `docker kill`
+
+重启docker `docker restart <ID/docker_name>`
+
+
+
+### Haskell学习
+
+不能用tab，必须用空格，对齐很严格
+
+https://www.w3cschool.cn/hsriti/
+
+```haskell
+-- 注释是 --
+-- 表示输入一个Block 类型和一个(Int, Int, Int)类型的tuple，输出一个GCStmt
+-- 第一行声明transBlk函数，然后定义该函数，函数内部使用pattern matching
+transBlk :: Block -> (Int, Int, Int) -> GCStmt
+transBlk blk ctr =
+  case blk of
+  [] -> GCAssume GCTrue
+  [x] -> transStmt x ctr
+  (x:xs) -> GCSeq (transStmt x ctr) (transBlk xs ctr)
+```
+
+
+
+### Markdown
+
+New page command
+
+```markdown
+<div style="page-break-after: always"></div>
 ```
 

@@ -1,3 +1,5 @@
+# Environmental Issues
+
 ```
 ./opt/cachelib/bin/cachebench: symbol lookup error: ./opt/cachelib/bin/cachebench: undefined symbol: _ZN6google21kLogSiteUninitializedE
 /usr/bin/ld: CMakeFiles/BogoShim.dir/test/BogoShim.cpp.o: undefined reference to symbol '_ZN6google11InitVLOG3__EPPiS0_PKci'
@@ -20,6 +22,18 @@ It wants to link a static lib to a shared lib.
 Build libfmt as the shared lib (libfmt.so) rather than (libfmt.a) solves the problem.
 
 Using command `cmake -DBUILD_SHARED_LIBS=ON ...`
+
+
+
+```
+error: command 'x86_64-apple-darwin13.4.0-clang++' failed with exit status 1 error ERROR: Failed building wheel for torch-sparse
+```
+
+This problem is encountered when installing torch_sparse in python. It means the g++ version is not correct on Mac.
+
+Use command `export CXX=clang++` to set the correct g++. https://github.com/astropy/halotools/issues/813#issuecomment-333701045
+
+This twitter contains the needed commands to install pytorch_geometric on MacOS. https://twitter.com/xbresson/status/1154686843130011649?s=21   Note: If it doesn't work, uninstall the according librarys and reinstall them.
 
 
 

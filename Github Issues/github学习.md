@@ -295,3 +295,30 @@ git config --global user.name "John Doe"
 git config --global user.email "john@doe.org"
 ```
 
+
+
+## SSH Key problem:
+
+```shell
+(base) s1@ubuntu:~/Desktop/test$ git clone git@github.com:CharlieQiu2017/cpsc554-proj2-simplex.git
+Cloning into 'cpsc554-proj2-simplex'...
+sign_and_send_pubkey: signing failed: agent refused operation
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+```
+
+Solution:
+
+```shell
+# generate ssh-key
+ssh-keygen -t ed25519
+ssh-keygen -t rsa -b 4096 
+# add to agent and reclone
+eval `ssh-agent -s`
+ssh-add
+git clone <...>
+```
+

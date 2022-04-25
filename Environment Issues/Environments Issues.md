@@ -136,3 +136,14 @@ New page command
 <div style="page-break-after: always"></div>
 ```
 
+
+
+### Tmux
+
+```shell
+tmux # enter tmux terminal
+# connect to the server and close the terminal
+tmux ls # watch how many sessions are alive
+tmux attach -t <session_num> # recover to the session
+```
+

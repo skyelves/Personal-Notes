@@ -9,6 +9,14 @@ CacheLib link library wrong: _ZN6google21kLogSiteUninitializedE, related to glog
 
 
 
+```
+Error: Permission denied @ apply2files - /usr/local/lib/docker/cli-plugins
+```
+
+When brew install, the error occurs.
+
+Solved by `sudo chown -R ${LOGNAME}:staff /usr/local/lib/docker`
+
 
 
 ```

@@ -223,14 +223,10 @@ https://queirozf.com/entries/jupyter-kernels-how-to-add-change-remove
 
 - Activate the virtualenv, e.g., `conda activate python37`.
 
-  ```
-  $ source your-venv/bin/activate
-  ```
-
 - Install jupyter in the virtualenv
 
   ```
-  (your-venv)$ pip install jupyter
+  (your-venv)$ pip install jupyter --user
   ```
 
 - Add the virtualenv as a jupyter kernel, e.g, replace `your-env` as `python37`.
